@@ -7,7 +7,8 @@ from torchvision import transforms
 from torch.utils.data import Dataset, DataLoader
 
 # Loading the annotations (CSV)
-annotations = pd.read_csv('path_to_annotations/train.csv')
+annotations = pd.read_csv('/home/vscode/.cache/kagglehub/datasets/vbookshelf/global-wheat-head-dataset-2021/versions/1/train.csv')
+
 
 class WheatDataset(Dataset):
     def __init__(self, annotations, img_dir, transform=None):
@@ -32,7 +33,9 @@ class WheatDataset(Dataset):
 
 # Define the image transformations
 transform = transforms.Compose([transforms.ToTensor()])
-dataset = WheatDataset(annotations, img_dir='path_to_images', transform=transform)
+dataset = WheatDataset(annotations, 
+                       img_dir='/home/vscode/.cache/kagglehub/datasets/vbookshelf/global-wheat-head-dataset-2021/versions/1/train', 
+                       transform=transform)
 
 
 # Load pre-trained Faster R-CNN model
