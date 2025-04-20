@@ -1,6 +1,7 @@
-path: datasets/wheat
+path: /workspaces/deep-learning-computer-vision-3961555/datasets/wheat
 train: images/train
 val: images/val
 
 names:
   0: wheat_head
+
